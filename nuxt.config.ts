@@ -1,11 +1,6 @@
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
-  // ssr: false,// For Deployment on Github Pages
-  // nitro:{
-  //   preset: 'github-pages'
-  // },
-
   modules: [
     '@nuxt/content',
     '@nuxt/icon',
