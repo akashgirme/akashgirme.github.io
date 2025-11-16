@@ -2,7 +2,7 @@
 #
 # To get started with Nuxt see: https://nuxtjs.org/docs/get-started/installation
 #
-nname: Deploy Nuxt site to GitHub Pages
+name: Deploy Nuxt site to GitHub Pages
 
 on:
   push:
