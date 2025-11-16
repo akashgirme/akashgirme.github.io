@@ -1,0 +1,1 @@
+import{_ as o,c as a,o as n,a as e,x as r}from"#entry";const c={},l={class:"py-10 m-auto sm:px-8"},d={class:"px-4 mx-auto max-w-2xl prose"};function x(t,s){return n(),a("div",l,[e("main",d,[r(t.$slots,"default",{},()=>[s[0]||(s[0]=e("h1",{class:"text-2xl"},"Page not found",-1))])])])}const f=o(c,[["render",x]]);export{f as default};
