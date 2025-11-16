@@ -26,13 +26,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Install pnpm
+      # Setup pnpm (no version → automatically uses package.json `packageManager`)
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 9
 
-      # Install Node.js (with pnpm cache)
+      # Setup Node.js with pnpm cache
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -40,11 +38,11 @@ jobs:
           cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Generate static site
         run: pnpm generate
-        # Output goes to .output/public
+        # Output: .output/public
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
