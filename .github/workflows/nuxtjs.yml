@@ -2,7 +2,7 @@
 #
 # To get started with Nuxt see: https://nuxtjs.org/docs/get-started/installation
 #
-name: Deploy Nuxt site to GitHub Pages
+nname: Deploy Nuxt site to GitHub Pages
 
 on:
   push:
@@ -26,17 +26,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Install pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      # Install Node.js (with pnpm cache)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm ci
+        run: pnpm install
 
-      - name: Generate static build
-        run: pnpm run generate
-        # Output: .output/public
+      - name: Generate static site
+        run: pnpm generate
+        # Output goes to .output/public
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
