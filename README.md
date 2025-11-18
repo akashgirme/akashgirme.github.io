@@ -2,4 +2,4 @@
 
 # Akash Girme
 
-This is my personal website build using [Nuxt Content](https://content.nuxt.com)
+This is my personal website built using [Nuxt Content](https://content.nuxt.com)
